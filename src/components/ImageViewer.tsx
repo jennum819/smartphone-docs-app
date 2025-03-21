@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 interface ImageViewerProps {
@@ -7,8 +7,8 @@ interface ImageViewerProps {
 }
 
 const ImageViewer: React.FC<ImageViewerProps> = ({ src, alt = '画像' }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [error, setError] = useState(false);
+  const [isLoaded, setIsLoaded] = React.useState(false);
+  const [error, setError] = React.useState(false);
 
   const handleLoad = () => {
     setIsLoaded(true);
@@ -40,6 +40,7 @@ const ImageViewer: React.FC<ImageViewerProps> = ({ src, alt = '画像' }) => {
         wheel={{ step: 0.1 }}
       >
         <TransformComponent>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img 
             src={src} 
             alt={alt} 

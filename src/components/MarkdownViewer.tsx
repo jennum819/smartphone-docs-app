@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import ImageViewer from './ImageViewer';
 
@@ -14,11 +14,11 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({ markdown, conversionErr
       <div className="prose prose-sm max-w-none sm:prose lg:prose-lg mx-auto px-4 py-2">
         <ReactMarkdown
           components={{
-            img: ({ node, ...props }) => (
+            img: ({ ...props }) => (
               <ImageViewer src={props.src || ''} alt={props.alt || ''} />
             ),
             // スマートフォン向けにテーブルをレスポンシブに
-            table: ({ node, ...props }) => (
+            table: ({ ...props }) => (
               <div className="overflow-x-auto">
                 <table className="min-w-full divide-y divide-gray-200" {...props} />
               </div>
