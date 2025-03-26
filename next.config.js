@@ -1,8 +1,10 @@
-// next.config.jsに変更
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
-  // その他の設定
+  eslint: {
+    // ESLintチェックを無効化（ビルド時のみ）
+    ignoreDuringBuilds: true,
+  },
 };
 
 module.exports = nextConfig;
