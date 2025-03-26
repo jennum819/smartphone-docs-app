@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import * as pdfParse from 'pdf-parse';
+import pdfParse from 'pdf-parse';
 import { detectFileType, downloadFile, getGoogleDocsExportUrl, getGoogleSlidesExportUrl, logConversionError } from '@/utils/fileConverter';
 
 export async function POST(request: NextRequest) {
